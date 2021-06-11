@@ -94,7 +94,7 @@ button {
 	.right {
 		right: auto;
 		height: 90vh;
-		top: 60px;
+		top: 5rem;
 		left: -1000px;
 		background-color: rgba(41, 36, 36, 0.9);
 		border-radius: 10px;
