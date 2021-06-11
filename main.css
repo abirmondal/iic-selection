@@ -34,9 +34,10 @@ button {
     font-family: sans-serif;
     z-index: 100;
 }
-.header .right {
+.right {
+	/*left: 40%;*/
 	right: 16%;
-	top: 60%;
+	top: 20px;
 	position: absolute;
 }
 .headlinks {
@@ -91,10 +92,13 @@ button {
 }
 
 @media(max-width: 900px) {
+	body {
+		margin-left: 1%;
+	}
 	.right {
 		right: auto;
 		height: 90vh;
-		top: 5rem;
+		top: 12vh;
 		left: -1000px;
 		background-color: rgba(41, 36, 36, 0.9);
 		border-radius: 10px;
@@ -103,6 +107,7 @@ button {
 	}
 	.headlinks {
 		display: block;
+		padding: 20px 25px;
 	}
 }
 

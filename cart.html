@@ -112,7 +112,7 @@
 		</nav>
 	</div>
 
-	<div style="padding-top: 50px;">
+	<div id="bodycon" style="padding-top: 50px;">
 		<div style="font-family: 'Exo 2'; font-size: 55px;">
 			Cart
 		</div>
@@ -255,6 +255,7 @@
 			$('.cartbox:nth-child('+i+') .carttext label').text(title);
 		}
 		fun_assign();
+
 	}
 
 	function fun_assign() {
@@ -279,6 +280,7 @@
 		$('#famt').text( finalamt.toFixed(2) );
 
 		if (totalamt == 0) {
+			// console.log(0);
 			$('#pricecal, #buypart').css('display', 'none');
 			$('.nopro').css('display', 'block');
 
