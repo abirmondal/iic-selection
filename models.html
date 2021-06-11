@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Models | IIC Tech Wing</title>
+	<link rel="icon" href="img/logoicon.svg">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+</head>
+
+<style type="text/css">
+	.container {
+		margin: 0 auto;
+		width: 30vw;
+		height: 200px;
+		position: relative;
+		padding-top: 50px;
+		perspective: 1000px;
+	}
+
+	.carousel {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		transform-style: preserve-3d;
+		transition: transform 1s;
+	}
+	.itembox {
+		transform-style: preserve-3d;
+	}
+	.item {
+		display: block;
+		position: absolute;
+		background: #111010;
+		padding: 20px;
+		width: 30vw;
+		height: 300px;
+		text-align: center;
+		color: #FFF;
+		filter: blur(5px);
+		border-radius: 10px;
+		transition: transform 1s;
+	}
+	.modellink {
+		text-decoration: none;
+		font-family: 'Acme';
+		color: #E24354;
+		font-size: 25px;
+	}
+	.modellink:hover {
+		color: #B2A2B7;
+		font-size: 25.5px;
+	}
+</style>
+
+<body>
+	<div class="header">
+		<button id="menu" style="padding: 10px 25px; top: 60%; position: absolute;"><img src="img/menu.svg" width="12px"></button>
+		<a href="index.html" style="top: 75%; left: 3.5rem; position: absolute;"><img src="img/logoicon.svg" width="25px"></a>
+		<button id="searchbtn" style="padding: 5px 5px 5px 20px; top: 60%; left: 5rem; position: absolute;"><img src="img/searchicon.svg" width="28px"></button>
+		<form action="" method="get">
+			<input type="serach" name="search" id="search" placeholder="Search...">
+		</form>
+
+		<nav class="right">
+			<a href="index.html" class="headlinks">About us</a>
+			<a href="models.html" class="headlinks active">Models</a>
+			<a href="reviews.html" class="headlinks">Reviews</a>
+			<a href="cart.html" class="headlinks">Add Cart</a>
+		</nav>
+	</div>
+
+	<div style="padding-top: 50px;">
+		<div style="font-family: 'Exo 2'; font-size: 55px;">
+			Models
+		</div>
+
+		<div class="container">
+		  	<div class="carousel">
+			    <div class="itembox">
+					<div class="item">
+						<img src="https://images-na.ssl-images-amazon.com/images/I/71Xb7bLeCxL._AC_SY606_.jpg" height="250px" style="border-radius: 10px;">
+						<br>
+						<a class="modellink" href="#">Wireless Over-Ear Headphone (Matte Black)</a>
+					</div>
+				</div>
+				<div class="itembox">
+					<div class="item">
+						<img src="https://images.jdmagicbox.com/quickquotes/images_main/beats_studio_wireless_headphone_white_10723261_0.jpg" height="250px" style="border-radius: 10px; max-width: 250px;">
+						<br>
+						<a class="modellink" href="#">Wireless Headphone White</a>
+					</div>
+				</div>
+				<div class="itembox">
+					<div class="item">
+						<img src="https://seller.shoponn.in/Item/Beats%20Studio%20Wireless%20Over%20Ear%20Headphones%20Red289121A.jpg" height="250px" style="border-radius: 10px;">
+						<br>
+						<a class="modellink" href="#">Wireless Over Ear Headphones Red</a>
+					</div>
+				</div>
+			    <div class="itembox">
+					<div class="item">
+						<img src="https://images-na.ssl-images-amazon.com/images/I/71Xb7bLeCxL._AC_SY606_.jpg" height="250px" style="border-radius: 10px;">
+						<br>
+						<a class="modellink" href="#">Wireless Over-Ear Headphone (Matte Black)</a>
+					</div>
+				</div>
+				<div class="itembox">
+					<div class="item">
+						<img src="https://images.jdmagicbox.com/quickquotes/images_main/beats_studio_wireless_headphone_white_10723261_0.jpg" height="250px" style="border-radius: 10px;">
+						<br>
+						<a class="modellink" href="#">Wireless Headphone White</a>
+					</div>
+				</div>
+				<div class="itembox">
+					<div class="item">
+						<img src="https://seller.shoponn.in/Item/Beats%20Studio%20Wireless%20Over%20Ear%20Headphones%20Red289121A.jpg" height="250px" style="border-radius: 10px;">
+						<br>
+						<a class="modellink" href="#">Wireless Over Ear Headphones Red</a>
+					</div>
+				</div>
+		  	</div>
+		</div>
+		<div style="text-align: center;" id="changebtn">
+			<button onclick="rotate('p')">
+				<img src="img/leftarrow.svg" width="50px" style="transform: scaleX(1); background-color: #9D9494; border-radius: 50%;">
+			</button>
+			<button onclick="rotate('n')">
+				<img src="img/leftarrow.svg" width="50px" style="transform: scaleX(-1); background-color: #fff; border-radius: 50%;">
+			</button>
+		</div>
+
+	</div>
+
+</body>
+
+<script type="text/javascript" src="main.js"></script>
+
+<script type="text/javascript">
+	var carousel = $(".carousel"),
+    items = $(".item"),
+    currdeg  = 0,
+    n = $('.item').length,
+    eachdeg = 360/n,
+    count = 1;
+
+    $('#changebtn').css('paddingTop', 2*($('.item').height() - $('.carousel').height() + parseInt( $('.container').css('paddingTop')) + parseInt($('.item').css('padding')) ) );
+
+    for (var i = 0; i < n; ++i) {
+    	var itemdeg = (i*eachdeg);
+    	$('.itembox:nth-child('+(i+1)+')').css('transform', 'rotateY('+itemdeg+'deg) translateZ(250px) rotateY(-'+itemdeg+'deg)');
+	}
+
+  	$('.itembox:nth-child(1) .item').css('filter', 'blur(0px)');
+
+	function rotate(e){
+		if(e=="n"){
+			currdeg = currdeg - eachdeg;
+		}
+		if(e=="p"){
+			currdeg = currdeg + eachdeg;
+		}
+	    activate(e);
+		carousel.css({
+			"-webkit-transform": "rotateY("+currdeg+"deg)",
+			"-moz-transform": "rotateY("+currdeg+"deg)",
+			"-o-transform": "rotateY("+currdeg+"deg)",
+			"transform": "rotateY("+currdeg+"deg)"
+		});
+	    items.css({
+			"-webkit-transform": "rotateY("+(-currdeg)+"deg)",
+			"-moz-transform": "rotateY("+(-currdeg)+"deg)",
+			"-o-transform": "rotateY("+(-currdeg)+"deg)",
+			"transform": "rotateY("+(-currdeg)+"deg)"
+		});
+	}
+
+	function activate(e) {
+		if (e == "n") {
+			count = count + 1;
+		  	$('.itembox:nth-child('+(count-1)+') .item').css('filter', 'blur(5px)');
+		}
+		if (e == "p") {
+			count = count - 1;
+		  	$('.itembox:nth-child('+(count+1)+') .item').css('filter', 'blur(5px)');
+		}
+		if (count == (n+1)) {
+			count = 1;
+		  	$('.itembox:nth-child('+(n)+') .item').css('filter', 'blur(5px)');
+		}
+		if (count == 0) {
+			count = n;
+		}
+
+	  	$('.itembox:nth-child('+count+') .item').css('filter', 'blur(0px)');
+	}
+
+	setInterval(function(){
+		rotate('n');
+	}, 5000);
+</script>
+
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Reviews | IIC Tech Wing</title>
+	<link rel="icon" href="img/logoicon.svg">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+</head>
+
+<style type="text/css">
+	.rating {
+		position: absolute;
+		left: 0;
+		top: 15px;
+		height: 100%;
+		cursor: pointer;
+		padding: 10px 0px;
+	}
+	.rating input {
+		position: absolute;
+		left: 0;
+		top: 0;
+		opacity: 0;
+	}
+	.icon {
+		font-size: 35px;
+		float: left;
+		color: transparent;
+		padding-right: 15px;
+	}
+	.rating:last-child .icon {
+		-webkit-text-stroke-width: 1.5px;
+		-webkit-text-stroke-color: #fff;
+	}
+	.rating:not(:hover) input:checked ~ .icon, .rating:hover input ~ .icon {
+	  color: #fff;
+	}
+
+	.field {
+		padding-top: 20px;
+		display: flex;
+		flex-flow: column-reverse;
+	}
+	.field #title, input {
+		transition: all 0.2s;
+	}
+	.fieldinp {
+		background-color: transparent;
+		color: #fff;
+		border: none;
+		outline: none;
+		padding: 5px 8px;
+		width: 30rem;
+		font-size: 20px;
+		-webkit-appearance: none;
+		font-family: 'Acme';
+	}
+	.field #title {
+		cursor: text;
+		max-width: 20rem;
+		font-size: 20px;
+		overflow: hidden;
+		white-space: nowrap;
+		transform-origin: left bottom;
+		transform: translate(5px, 1.5rem) scale(1.2);
+		font-family: 'Acme';
+	}
+	.field ::-webkit-input-placeholder {
+		opacity: 0;
+		transition: inherit;
+	}
+	.fieldinp:focus::-webkit-input-placeholder {
+		opacity: 1;
+	}
+	.fieldinp:not(:placeholder-shown) + #title, .fieldinp:focus + #title {
+		transform: translate(0px, 0) scale(1);
+		cursor: pointer;
+	}
+	.line {
+		height: 0.5px;
+		background-color: #fff;
+		opacity: 0.5;
+	}
+	.activeline {
+		width: 0%;
+		height: 2px;
+		background-color: #fff;
+		margin: 0 auto;
+	}
+
+	.submitbtn {
+		color: #1C1919;
+		background-color: rgba(255, 255, 255, 0.8);
+		border: 2px solid rgba(255, 255, 255, 0.8);
+		border-radius: 5px;
+		font-size: 20px;
+		font-weight: 600;
+		padding: 5px;
+		cursor: pointer;
+		font-family: 'Play';
+	}
+	.submitbtn:hover {
+		color: #fff;
+		background-color: #1C1919;
+	}
+	.resetbtn {
+		color: #1C1919;
+		background-color: #E24354;
+		border: 2px solid #E24354;
+		border-radius: 5px;
+		font-size: 20px;
+		font-weight: 600;
+		padding: 5px;
+		cursor: pointer;
+		font-family: 'Play';
+	}
+	.resetbtn:hover {
+		color: #E24354;
+		background-color: #1C1919;
+	}
+	.error {
+		font-size: 15px;
+		color: #E24354;
+		padding-top: 10px;
+		display: block;
+	}
+
+	.stars {
+		display: inline-block;
+		color: rgba(255, 255, 4, 0.9);
+	}
+	.precom {
+		width: 30rem;
+		padding: 10px 0px;
+	}
+</style>
+
+<body>
+	<div class="header">
+		<button id="menu" style="padding: 10px 25px; top: 60%; position: absolute;"><img src="img/menu.svg" width="12px"></button>
+		<a href="index.html" style="top: 75%; left: 3.5rem; position: absolute;"><img src="img/logoicon.svg" width="25px"></a>
+		<button id="searchbtn" style="padding: 5px 5px 5px 20px; top: 60%; left: 5rem; position: absolute;"><img src="img/searchicon.svg" width="28px"></button>
+		<form action="" method="get">
+			<input type="serach" name="search" id="search" placeholder="Search...">
+		</form>
+
+		<nav class="right">
+			<a href="index.html" class="headlinks">About us</a>
+			<a href="models.html" class="headlinks">Models</a>
+			<a href="reviews.html" class="headlinks active">Reviews</a>
+			<a href="cart.html" class="headlinks">Add Cart</a>
+		</nav>
+	</div>
+
+	<div style="padding-top: 50px;">
+		<div style="font-family: 'Exo 2'; font-size: 55px;">
+			Reviews
+		</div>
+
+		<div style="padding: 30px 0px;">
+			<div class="precom">
+				<label style="font-size: 25px;">Raj Dey</label>
+				<div class="stars" data-val="5">
+				</div>
+				<div style="width: 90%; padding-left: 10%; font-size: 20px;">
+					The products are really excellent.
+				</div>
+			</div>
+			<div class="precom">
+				<label style="font-size: 25px;">Rahul Ghosh</label>
+				<div class="stars" data-val="4">
+				</div>
+				<div style="width: 90%; padding-left: 10%; font-size: 20px;">
+					They are good.
+				</div>
+			</div>
+			<div class="precom">
+				<label style="font-size: 25px;">Raj Dey</label>
+				<div class="stars" data-val="5">
+				</div>
+				<div style="width: 90%; padding-left: 10%; font-size: 20px;">
+					The products are really excellent.
+				</div>
+			</div>
+			<div class="precom">
+				<label style="font-size: 25px;">Rahul Ghosh</label>
+				<div class="stars" data-val="4">
+				</div>
+				<div style="width: 90%; padding-left: 10%; font-size: 20px;">
+					They are good.
+				</div>
+			</div>
+			<div class="precom">
+				<label style="font-size: 25px;">Raj Dey</label>
+				<div class="stars" data-val="5">
+				</div>
+				<div style="width: 90%; padding-left: 10%; font-size: 20px;">
+					The products are really excellent.
+				</div>
+			</div>
+			<div class="precom">
+				<label style="font-size: 25px;">Rahul Ghosh</label>
+				<div class="stars" data-val="4">
+				</div>
+				<div style="width: 90%; padding-left: 10%; font-size: 20px;">
+					They are good.
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<fieldset style="border: none; padding-top: 20px;">
+				<label for="stars" style="font-size: 30px; font-family: 'Acme';">Post Comments</label>
+				<form action="" method="get" id="formcom">
+					<div style="position: relative;">
+						<label class="rating">
+							<input type="radio" name="stars" value="1" />
+							<span class="icon">&#9733;</span>
+						</label>
+						<label class="rating">
+							<input type="radio" name="stars" value="2" />
+							<span class="icon">&#9733;</span>
+							<span class="icon">&#9733;</span>
+						</label>
+						<label class="rating">
+							<input type="radio" name="stars" value="3" />
+							<span class="icon">&#9733;</span>
+							<span class="icon">&#9733;</span>
+							<span class="icon">&#9733;</span>   
+						</label>
+						<label class="rating">
+							<input type="radio" name="stars" value="4" />
+							<span class="icon">&#9733;</span>
+							<span class="icon">&#9733;</span>
+							<span class="icon">&#9733;</span>
+							<span class="icon">&#9733;</span>
+						</label>
+						<label class="rating">
+							<input type="radio" name="stars" id="stars" value="5" />
+							<span class="icon">&#9733;</span>
+							<span class="icon">&#9733;</span>
+							<span class="icon">&#9733;</span>
+							<span class="icon">&#9733;</span>
+							<span class="icon">&#9733;</span>
+							<label class="error"></label>
+						</label>
+					</div>
+					<div class="field" style="padding-top: 70px;" id="frname">
+						<label class="error"></label>
+						<div style="width: 30rem;">
+							<div class="line"></div>
+							<div class="activeline"></div>
+						</div>
+
+						<input class="fieldinp" type="text" name="rname" id="rname" placeholder="Enter Full Name">
+						<label for="rname" id="title">Name<sup style="color: #E24354;">*</sup></label>
+					</div>
+					<div class="field" id="fcomment">
+						<label class="error"></label>
+						<div style="width: 30rem;">
+							<div class="line"></div>
+							<div class="activeline"></div>
+						</div>
+
+						<textarea class="fieldinp" type="textarea" name="comment" id="comment" rows="2" placeholder="Type Your Comments Here..."></textarea>
+						<label for="comment" id="title">Comments<sup style="color: #E24354;">*</sup></label>
+					</div>
+					<div style="padding-top:20px; width: 30rem; text-align: center;">
+						<div style="display: inline-block; padding-right: 20px;">
+							<input type="reset" class="resetbtn" value="Reset">
+						</div>
+						<div style="display: inline-block;padding-left: 20px;">
+							<input type="button" class="submitbtn" value=" Post ">
+						</div>
+					</div>
+				</form>
+			</fieldset>
+		</div>
+
+	</div>
+
+</body>
+
+<script type="text/javascript" src="main.js"></script>
+
+<script type="text/javascript">
+	for (var i = 1; i <= $('.precom').length; i++ ) {
+		var x = $('.precom:nth-child('+i+') .stars');
+		var starset = '';
+		for (var j = 1; j <= x.attr('data-val'); ++j) {
+			starset += '<span style="font-size: 17px;">&#9733;</span> ';
+		}
+		x.html(starset);
+	}
+
+	for (var i = 1; i <= 5; i++) {
+		$('.rating:nth-child('+i+')').css('z-index', (5-i+1));
+	}
+
+	var rate = 0;
+
+	$(':radio').change(function(){
+		rate = this.value;
+		$('.rating .error').html('');
+	});
+
+	$('.fieldinp').focus(function(){
+		$('#f'+$(this)[0].id+' .activeline').animate({
+			width: '100%'
+		});
+	});
+	$('.fieldinp').blur(function(){
+		$('#f'+$(this)[0].id+' .activeline').animate({
+			width: '0%'
+		});
+	});
+
+
+	$('.submitbtn').click(function(e){
+		e.preventDefault();
+		var input = $('#formcom :input').serializeArray();
+		$.each(input, function(){
+		});
+
+		if(rate == 0) {
+			$('.rating .error').html('This field is required.');
+		}
+		if ( is_data('rname') == false && is_data('comment') == false && rate == 0) {
+			return false;
+		}
+		else{
+			$('#formcom').submit();
+		}
+
+
+	});
+
+	$('.resetbtn').click(function(){
+		$('.error').html('');
+		$('.line, .activeline').css('background-color', '#fff');
+		$('.fieldinp').css('color', '#fff');
+		rate = 0;
+	});
+	function is_data(tagname) {
+		if ($('#'+tagname).val() == '') {
+			$('#'+tagname).css('color', '#E24354');
+			$('#f'+tagname+' .error').html('This field is required.');
+			$('#f'+tagname+' .line').css('background-color', '#E24354');
+			$('#f'+tagname+' .activeline').css('background-color', '#E24354');
+		}
+		return false;
+	}
+	$('#rname, #comment').on('input', function(){
+		$('#'+this.name).css('color', '#fff');
+		$('#f'+this.name+' .error').html('');
+		$('#f'+this.name+' .line').css('background-color', '#fff');
+		$('#f'+this.name+' .activeline').css('background-color', '#fff');
+		is_data(this.name);
+	});
+	$('#rname, #comment').on('blur', function(){
+		is_data(this.name);
+	});
+</script>
+
+</html>

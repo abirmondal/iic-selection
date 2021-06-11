@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>IIC Tech Wing</title>
+	<link rel="icon" href="img/logoicon.svg">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+</head>
+<body>
+	<div class="header">
+		<button id="menu" style="padding: 10px 25px; top: 60%; position: absolute;"><img src="img/menu.svg" width="12px"></button>
+		<a href="index.html" style="top: 75%; left: 3.5rem; position: absolute;"><img src="img/logoicon.svg" width="25px"></a>
+		<button id="searchbtn" style="padding: 5px 5px 5px 20px; top: 60%; left: 5rem; position: absolute;"><img src="img/searchicon.svg" width="28px"></button>
+		<form action="" method="get">
+			<input type="serach" name="search" id="search" placeholder="Search...">
+		</form>
+
+		<nav class="right">
+			<a href="index.html" class="headlinks active">About us</a>
+			<a href="models.html" class="headlinks">Models</a>
+			<a href="reviews.html" class="headlinks">Reviews</a>
+			<a href="cart.html" class="headlinks">Add Cart</a>
+		</nav>
+	</div>
+
+
+		<div style="float: left; padding-top: 9.5rem;" id="leftpart">
+
+			<div style="font-size: 20px; font-family: 'Acme'; padding-left: 60px;">
+				THE BEST CHOICE
+			</div>
+			<div style="font-size: 55px; font-family: 'Exo 2'; padding: 15px 45px;">
+				Beats Studio Wireless
+			</div>
+			<div style="font-size: 25px; font-family: 'Play'; max-width: 500px; padding-left: 45px;">
+				Almost bofore we knew it, we had left the ground. I watched the storm, so beautiful yet terrific.
+			</div>
+
+			<div style="padding-top: 70px;">
+				<div style="float: left;">
+					<img src="img/videoimage.svg" width="420px" height="370px">
+				</div>
+				<div style="float: left; padding-top: 70px; padding-left: 20px; width: 300px;">
+					<div style="font-family: 'Acme'; color: #E24354; font-size: 20px; padding: 20px 0px;">
+						Mobile App
+					</div>
+					<div style="font-family: 'Roboto'; color: rgba(255, 255, 255, 0.5); font-size: 18px; padding: 20px 0px;">
+						Mist enveloped the ship three hours out from port.
+					</div>
+					<div id="download" style="font-family: 'Acme';color: rgba(255, 255, 255, 0.7); font-size: 20px; padding-top: 30px;">
+						Download for iOS and Android
+					</div>
+					<div style="padding-top: 10px;"><img src="underline.svg" width="250px"></div>
+				</div>
+			</div>
+		</div>
+		<div style="float: left; padding-top: 2rem; position: relative; width: 40rem;" id="rightpart">
+			<div style="padding-left: 50px;">
+				<div id="arrows" style="position: absolute; top: 28rem; right: 0%; z-index: 100;">
+					<button style="padding-right: 5px;" onclick="changeto(-1)">
+						<img src="img/leftarrow.svg" width="50px" style=" background-color: #9D9494; border-radius: 50%;">
+					</button>
+					<button style="padding-left: 5px;" onclick="changeto(1)">
+						<img src="img/leftarrow.svg" width="50px" style="transform: scaleX(-1); background-color: #fff; border-radius: 50%;">
+					</button>
+				</div>
+				<div class="slideshow">
+					<figure class="slidefigure">
+						<div class="mySlides">
+							<div id="image" style="height: 500px; overflow: hidden;">
+								<img src="img/pro1.svg" width="750px" style="transform: rotate(27.5deg); transform-origin: 60% 0%;">
+							</div>
+							<div style="padding-top: 0rem; width: 90%;">
+								<div style="text-align: center; font-family: 'Acme'; font-size: 20px; color: #B2A2B7; padding: 15px 0px;">
+									Use it Everywhere
+								</div>
+								<div style="font-family: 'Acme'; font-size: 15px; padding: 20px 0px; color: #D0D0D0;">
+									Originally enveiled in 2007 for the iPhone, iOS has been extended to support other Apple devices such as the iPod Touch (September 2007) and the iPad (January 2010). As of March 2018, Apple's App Store contaics more than 2.1 million iOS applications, 1 million of which are native for iPads. [13] These mobile apps have collectively been downloaded more than 130 billion times.
+								</div>
+							</div>
+						</div>
+						<div class="mySlides">
+							<div id="image" style="height: 500px; overflow: hidden;">
+								<img src="img/pro1.svg" width="750px" style="transform: rotate(27.5deg); transform-origin: 60% 0%;">
+							</div>
+							<div style="padding-top: 0rem; width: 90%;">
+								<div style="text-align: center; font-family: 'Acme'; font-size: 20px; color: #B2A2B7; padding: 15px 0px;">
+									Use it Everywhere
+								</div>
+								<div style="font-family: 'Acme'; font-size: 15px; padding: 20px 0px; color: #D0D0D0;">
+									Originally enveiled in 2007 for the iPhone, iOS has been extended to support other Apple devices such as the iPod Touch (September 2007) and the iPad (January 2010). As of March 2018, Apple's App Store contaics more than 2.1 million iOS applications, 1 million of which are native for iPads. [13] These mobile apps have collectively been downloaded more than 130 billion times.
+								</div>
+							</div>
+						</div>
+						<div class="mySlides">
+							<div id="image" style="height: 500px; overflow: hidden;">
+								<img src="img/pro1.svg" width="750px" style="transform: rotate(27.5deg); transform-origin: 60% 0%;">
+							</div>
+							<div style="padding-top: 0rem; width: 90%;">
+								<div style="text-align: center; font-family: 'Acme'; font-size: 20px; color: #B2A2B7; padding: 15px 0px;">
+									Use it Everywhere
+								</div>
+								<div style="font-family: 'Acme'; font-size: 15px; padding: 20px 0px; color: #D0D0D0;">
+									Originally enveiled in 2007 for the iPhone, iOS has been extended to support other Apple devices such as the iPod Touch (September 2007) and the iPad (January 2010). As of March 2018, Apple's App Store contaics more than 2.1 million iOS applications, 1 million of which are native for iPads. [13] These mobile apps have collectively been downloaded more than 130 billion times.
+								</div>
+							</div>
+						</div>
+					</figure>
+				</div>
+				<div style="width: 90%; text-align: center;" id="counter">
+				</div>
+			</div>
+		</div>
+
+
+</body>
+
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript">
+	var x = parseInt($('#leftpart').css('height')) + parseInt($('#leftpart').css('paddingTop')) - parseInt($('#rightpart').css('paddingTop'));
+	$('#rightpart').css('height', x);
+	var y = parseInt($('body').css('marginLeft'));
+	var x = $(document).width() - $('#leftpart').width() - y;
+	if (x > 500) {
+		x = x -25;
+	}
+
+	var length = $('.mySlides').length;
+	var marker = 0;
+	$(".slidefigure").css('width', length*100+"%");
+	$(".mySlides").css('width', 100/length+"%");
+
+	for (var i = 0; i < length; ++i) {
+		$('#counter').append('<div class="countdiv" onclick="slideto('+i+')"><span class="dots"></span></div>');
+	}
+
+	function slideto(n) {
+		counterdeactive();
+		$('.slidefigure').animate({left: "-"+n*100+"%"});
+		counteractive(n+1);
+		marker=n;
+	}
+	function counteractive(n) {
+		$('.countdiv:nth-child('+n+') .dots').addClass("active");
+	}
+	function counterdeactive() {
+		$('.dots.active').removeClass("active");
+	}
+
+	counteractive(1);
+
+	function changeto(x) {
+		marker = marker+x;
+		if(marker == length) {
+			marker=0;
+		}
+		if(marker == -1) {
+			marker=length-1;
+		}
+		slideto(marker);
+	}
+
+	setInterval(function(){
+		changeto(1);
+	}, 3000);
+</script>
+
+</html>

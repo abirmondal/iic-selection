@@ -1,0 +1,125 @@
+body {
+	background-color: #1C1919;
+	background-image: url('img/logoback.svg');
+	background-repeat: no-repeat;
+	background-position: top right;
+	background-attachment: fixed;
+	background-size: 63rem;
+    color: #fff;
+    margin-left: 7%;
+    margin-right: 0px;
+}
+button {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	outline: none;
+}
+#search {
+	top: 80%;
+	left: 8.5rem;
+	position: absolute;
+	background: transparent;
+	border: none;
+	border-bottom: 3px solid #fff;
+	outline: none;
+	width: 0;
+	opacity: 0;
+	color: #fff;
+	font-size: 18px;
+}
+.header {
+	padding-top: 2rem;
+	position: relative;
+    font-family: sans-serif;
+    z-index: 100;
+}
+.header .right {
+	right: 16%;
+	top: 60%;
+	position: absolute;
+}
+.headlinks {
+	padding: 20px 25px;
+	position: relative;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.active.headlinks::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -2px;
+	width: 100%;
+	height: 4px;
+	opacity: 0.9;
+	background-color: rgba(255, 245, 4, 0.5);
+	border-radius: 10rem; 
+}
+.dots {
+	height: 12px;
+	width: 12px;
+	border: 2px solid #C4C4C4;
+	background-color: transparent;
+	display: inline-block;
+	border-radius: 50%;
+	cursor: pointer;
+}
+.dots.active {
+	background-color: #C4C4C4;
+}
+.slideshow {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	font-size: 0;
+}
+.slidefigure {
+	position: relative;
+	margin: 0;
+}
+.countdiv {
+	display: inline-block;
+	padding: 0px 15px;
+}
+.mySlides {
+	display: inline-block;
+	position: relative;
+}
+
+@media(max-width: 600px) {
+	.right {
+		display: none;
+	}
+	.headlinks {
+		display: block;
+	}
+}
+@media(max-width: 900px) {
+	.right {
+		display: none;
+	}
+	.headlinks {
+		display: block;
+	}
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.5);
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.7);
+}

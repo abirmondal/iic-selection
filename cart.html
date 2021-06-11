@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Add Cart | IIC Tech Wing</title>
+	<link rel="icon" href="img/logoicon.svg">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+</head>
+
+<style type="text/css">
+	.cartbox {
+		padding: 10px 0px;
+		position: relative;
+		height: 225px;
+	}
+	.carttext {
+		display: inline-block;
+		padding: 10px;
+		float: left;
+		height: 60%;
+		position: relative;
+		width: 50%;
+	}
+	.pprice {
+		 display: inline-block;
+		 padding: 15px 20px;
+		 width: 20%; height: 15%;
+		 float: left;
+	}
+	.pqty {
+		display: inline-block;
+		padding: 5px 20px;
+		width: 20%;
+		height: 15%;
+		float: left;
+	}
+	.qtybox {
+		border-radius: 10px;
+		font-size: 0px;
+		color: #fff;
+		padding-top: 10px;
+	}
+	.qtybtn {
+		display: inline-block;
+		background-color: darkgrey;
+		font-size: 20px;
+		width: 25px;
+		height: 25px;
+		text-align: center;
+		cursor: pointer;
+	}
+	.qtyn {
+		display: inline-block;
+		background-color: grey;
+		font-size: 20px;
+		width: 50px;
+		height: 25px;
+		text-align: center;
+	}
+	.buybtn {
+		padding: 15px;
+		background-color: rgba(255, 245, 4, 0.8);
+		font-size: 25px;
+		border-radius: 10px;
+		color: #fff;
+		border: 3px solid rgba(255, 245, 4, 0.8);
+	}
+	.buybtn:hover {
+		background-color: transparent;
+		color: rgba(255, 245, 4, 0.8);
+	}
+	.nopro {
+		width: 100%;
+		height: 500px;
+		text-align: center;
+		position: relative;
+		filter: brightness(0.6);
+	}
+	#pricecal, #buypart {
+		display: none;
+	}
+	.nopro img {
+		filter: grayscale(100%);
+	}
+	.noprotext {
+		position: absolute;
+		bottom: 5%;
+		width: 100%;
+		text-align: center;
+	}
+</style>
+
+<body>
+	<div class="header">
+		<button id="menu" style="padding: 10px 25px; top: 60%; position: absolute;"><img src="img/menu.svg" width="12px"></button>
+		<a href="index.html" style="top: 75%; left: 3.5rem; position: absolute;"><img src="img/logoicon.svg" width="25px"></a>
+		<button id="searchbtn" style="padding: 5px 5px 5px 20px; top: 60%; left: 5rem; position: absolute;"><img src="img/searchicon.svg" width="28px"></button>
+		<form action="" method="get">
+			<input type="serach" name="search" id="search" placeholder="Search...">
+		</form>
+
+		<nav class="right">
+			<a href="index.html" class="headlinks">About us</a>
+			<a href="models.html" class="headlinks">Models</a>
+			<a href="reviews.html" class="headlinks">Reviews</a>
+			<a href="cart.html" class="headlinks active">Add Cart</a>
+		</nav>
+	</div>
+
+	<div style="padding-top: 50px;">
+		<div style="font-family: 'Exo 2'; font-size: 55px;">
+			Cart
+		</div>
+
+		<div class="nopro">
+			<img src="img/SpottedBriskDuckbillplatypus-max-1mb.gif">
+			<br>
+			<div class="noprotext">
+				<label style="font-size: 35px; font-family: 'Acme';">You Cart is empty.</label><br>
+				<label style="font-size: 20px; font-family: 'Play';">Go to the Models section to add products to the Cart and feel the beat with Beats Studio Wireless.</label>
+			</div>
+		</div>
+
+		<div>
+			<div class="cartbox">
+				<div style="display: inline-block; padding: 5px; float: left;">
+					<img src="https://seller.shoponn.in/Item/Beats%20Studio%20Wireless%20Over%20Ear%20Headphones%20Red289121A.jpg" height="200px" style="border-radius: 10px;">
+				</div>
+				<div class="carttext">
+					<label class="pname" style="color: #E24354; font-size: 35px; font-family: 'Acme';">Wireless Over Ear Headphones Red</label>
+					<div style="vertical-align: bottom; position: absolute; bottom: 10px;">
+						Model Number : 123-XXX-XXX,<br>
+						Color : Red,<br>
+						Type : Over Ear
+					</div>
+				</div>
+				<div class="pprice">
+					<label style="font-size: 25px;">&#x20B9;</label>
+					<label style="font-size: 25px;">1000.30</label>
+				</div>
+				<div class="pqty">
+					<label style="font-size: 18px;">Quantity</label>
+					<div class="qtybox">
+						<div class="qtybtn" style="border-radius: 5px 0px 0px 5px;">-</div>
+						<div class="qtyn">2</div>
+						<div class="qtybtn" style="border-radius: 0px 5px 5px 0px;">+</div>
+					</div>
+				</div>
+			</div>
+			<div class="cartbox">
+				<div style="display: inline-block; padding: 5px; float: left;">
+					<img src="https://images-na.ssl-images-amazon.com/images/I/71Xb7bLeCxL._AC_SY606_.jpg" height="200px" width="200px" style="border-radius: 10px;">
+				</div>
+				<div class="carttext">
+					<label class="pname" style="color: #E24354; font-size: 35px; font-family: 'Acme';">Wireless Over Ear Headphones Red234</label>
+					<div style="vertical-align: bottom; position: absolute; bottom: 10px;">
+						Model Number : 123-XXX-XXX,<br>
+						Color : Red,<br>
+						Type : Over Ear
+					</div>
+				</div>
+				<div class="pprice">
+					<label style="font-size: 25px;">&#x20B9;</label>
+					<label style="font-size: 25px;">1200.00</label>
+				</div>
+				<div class="pqty">
+					<label style="font-size: 18px;">Quantity</label>
+					<div class="qtybox">
+						<div class="qtybtn" style="border-radius: 5px 0px 0px 5px;">-</div>
+						<div class="qtyn">1</div>
+						<div class="qtybtn" style="border-radius: 0px 5px 5px 0px;">+</div>
+					</div>
+				</div>
+			</div>
+			<div class="cartbox">
+				<div style="display: inline-block; padding: 5px; float: left;">
+					<img src="https://images.jdmagicbox.com/quickquotes/images_main/beats_studio_wireless_headphone_white_10723261_0.jpg" height="200px" width="200px" style="border-radius: 10px;">
+				</div>
+				<div class="carttext">
+					<label class="pname" style="color: #E24354; font-size: 35px; font-family: 'Acme';">Wireless Over Ear Headphones Red3</label>
+					<div style="vertical-align: bottom; position: absolute; bottom: 10px;">
+						Model Number : 123-XXX-XXX,<br>
+						Color : Red,<br>
+						Type : Over Ear
+					</div>
+				</div>
+				<div class="pprice">
+					<label style="font-size: 25px;">&#x20B9;</label>
+					<label style="font-size: 25px;">1500.00</label>
+				</div>
+				<div class="pqty">
+					<label style="font-size: 18px;">Quantity</label>
+					<div class="qtybox">
+						<div class="qtybtn" style="border-radius: 5px 0px 0px 5px;">-</div>
+						<div class="qtyn">1</div>
+						<div class="qtybtn" style="border-radius: 0px 5px 5px 0px;">+</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="pricecal" style="position: relative; padding-top: 20px; text-align: center;">
+			<div style="width: 90vw; background-color: #fff; padding: 0px; height: 2px; border-radius: 10px;"></div>
+			<div style="font-size: 25px; position: absolute; right: 15%; padding-top: 20px;">
+				<table style="border-bottom: 2px solid #fff; padding-bottom: 10px;">
+					<tr>
+						<td style="padding: 0px 10px; text-align: right;">Total Price</td>
+						<td style="padding: 0px 10px;"> : </td>
+						<td style="padding: 0px 10px; text-align: left;">&#x20B9; <label id="tamt"></label></td>
+					</tr>
+					<tr>
+						<td style="padding: 0px 10px; text-align: right;" data-per="6" id="taxper">Tax</td>
+						<td style="padding: 0px 10px;"> : </td>
+						<td style="padding: 0px 10px; text-align: left;">&#x20B9; <label id="taxamt"></label></td>
+					</tr>
+					<tr>
+						<td style="padding: 0px 10px; text-align: right;">Delivery Charge</td>
+						<td style="padding: 0px 10px;"> : </td>
+						<td style="padding: 0px 10px; text-align: left;">&#x20B9; <label id="damt">30.00</label></td>
+					</tr>
+				</table>
+				<table style="padding-top: 10px;">
+					<tr>
+						<td style="padding: 0px 10px; text-align: right;">Final Amount</td>
+						<td style="padding: 0px 10px;"> : </td>
+						<td style="padding: 0px 10px; text-align: left;">&#x20B9; <label id="famt"></label></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div id="buypart" style="position: relative; padding-top: 200px; padding-bottom: 100px; text-align: center;">
+			<div style="font-size: 25px; position: absolute; right: 15%; padding-top: 20px;">
+				<button class="buybtn">Buy Now</button>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<script type="text/javascript" src="main.js"></script>
+
+<script type="text/javascript">
+	var totalamt;
+
+	for (var i = 1; i <= $('.cartbox').length; i++) {
+		var title = $('.cartbox:nth-child('+i+') .carttext label').text();
+		if (title.length > 30) {
+			title = title.substring(0, 30) + '...';
+			$('.cartbox:nth-child('+i+') .carttext label').text(title);
+		}
+		fun_assign();
+	}
+
+	function fun_assign() {
+		for (var i = 1; i <= $('.cartbox').length; i++) {
+			$('.cartbox:nth-child('+i+') .pqty .qtybox .qtybtn:nth-child(1)').attr('onClick', 'qtychange(-1, '+i+')');
+			$('.cartbox:nth-child('+i+') .pqty .qtybox .qtybtn:nth-child(3)').attr('onClick', 'qtychange(1, '+i+')');
+		}
+	}
+
+	caltotal();
+	
+	function caltotal() {
+		totalamt = 0;
+		for (var i = 1; i <= $('.cartbox').length; i++) {
+			totalamt += parseInt($('.cartbox:nth-child('+i+') .pqty .qtybox .qtyn').text()) * parseFloat($('.cartbox:nth-child('+i+') .pprice label:nth-child(2)').text());
+		}
+		$('#tamt').text(totalamt.toFixed(2));
+		var tax = ($('#taxper').attr('data-per') * totalamt / 100);
+		$('#taxper').text( 'Tax ('+$('#taxper').attr('data-per')+'%)' );
+		$('#taxamt').text( tax.toFixed(2) );
+		var finalamt = totalamt + tax + parseInt($('#damt').text());
+		$('#famt').text( finalamt.toFixed(2) );
+
+		if (totalamt == 0) {
+			$('#pricecal, #buypart').css('display', 'none');
+			$('.nopro').css('display', 'block');
+
+		}
+		else {
+			$('#pricecal, #buypart').css('display', 'block');
+			$('.nopro').css('display', 'none');
+			$('table:nth-child(2) td:nth-child(1)').width( $('table:nth-child(1) td:nth-child(1)').width() );
+		}
+	}
+	function qtychange(x, n) {
+		var newqty = parseInt($('.cartbox:nth-child('+n+') .pqty .qtybox div:nth-child(2)').text()) + x;
+		if (newqty == 0) {
+			$('.cartbox:nth-child('+n+')').remove();
+			fun_assign();
+		}
+		else {
+			$('.cartbox:nth-child('+n+') .pqty .qtybox div:nth-child(2)').text(newqty);
+		}
+		caltotal();
+	}
+</script>
+
+</html>
